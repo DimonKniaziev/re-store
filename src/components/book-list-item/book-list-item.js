@@ -1,6 +1,6 @@
 import React from "react";
 
-const BookListItem = ({book}) => {
+const BookListItem = ({book, onAddedToCart}) => {
     const {title, author, price, coverImage} = book;
     return (
         <React.Fragment>
@@ -8,7 +8,7 @@ const BookListItem = ({book}) => {
             <h4>{title}</h4>
             <span>{author}</span>
             <span>{price}</span>
-            <button>Add to Cart</button>
+            <button onClick={onAddedToCart}>Add to Cart</button>
         </React.Fragment>
     )
 }
