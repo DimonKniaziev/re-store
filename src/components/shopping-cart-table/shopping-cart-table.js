@@ -20,6 +20,16 @@ const ShoppingCartTable = ({items, onIncrease, onDecrease, onDelete}) => {
         )
     }
 
+    const allTotal = (items) => {
+        let allTotal = 0;
+
+        items.map((item) => {
+            return allTotal += item.total;
+        });
+
+        return allTotal;
+    }
+
     return (
         <div>
             <h2>Your Order</h2>
@@ -40,13 +50,13 @@ const ShoppingCartTable = ({items, onIncrease, onDecrease, onDelete}) => {
             </table>
 
             <div>
-                Total: $210
+                Total: ${allTotal(items)}
             </div>
         </div>
     );
 }
 
-const mapStateToProps = ({cartItems, orderTotal}) => {
+const mapStateToProps = ({shoppingCart: {cartItems, orderTotal}}) => {
     return {
         items: cartItems,
         total: orderTotal
