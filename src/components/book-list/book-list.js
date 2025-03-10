@@ -3,10 +3,11 @@ import BookListItem from "../book-list-item";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import withBookstoreService from "../hoc";
-import { fetchBooks, bookAddedToCart } from "../../actions";
+// import { fetchBooks, bookAddedToCart } from "../../actions";
 import compose from "../../utils";
 import Spinner from "../spinner";
 import ErrorIndicator from "../error-indicator";
+import { useBooks } from "../../store";
 
 const BookList = ({books, onAddedToCart}) => {
     return (
